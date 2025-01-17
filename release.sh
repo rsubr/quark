@@ -17,5 +17,8 @@ git tag -fa "${ver}" -m "Release ${ver}"
 echo "Deleting remote tag ${ver}"
 git push --delete origin "${ver}"
 
+echo "Pushing main branch to remote"
+git push
+
 echo "Pushing local tags to remote"
 git push origin tag "${ver}"
