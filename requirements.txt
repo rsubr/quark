@@ -119,13 +119,13 @@ blinker==1.9.0 \
     --hash=sha256:b4ce2265a7abece45e7cc896e98dbebe6cead56bcf805a3d23136d145f5445bf \
     --hash=sha256:ba0efaa9080b619ff2f3459d1d500c57bddea4a6b424b60a91141db6fd2f08bc
     # via flask
-boto3==1.36.0 \
-    --hash=sha256:159898f51c2997a12541c0e02d6e5a8fe2993ddb307b9478fd9a339f98b57e00 \
-    --hash=sha256:d0ca7a58ce25701a52232cc8df9d87854824f1f2964b929305722ebc7959d5a9
+boto3==1.36.2 \
+    --hash=sha256:76cfc9a705be46e8d22607efacc8d688c064f923d785a01c00b28e9a96425d1a \
+    --hash=sha256:fde1c29996b77274a60b7bc9f741525afa6267bb1716eb644a764fb7c124a0d2
     # via -r /app/requirements.in
-botocore==1.36.1 \
-    --hash=sha256:dec513b4eb8a847d79bbefdcdd07040ed9d44c20b0001136f0890a03d595705a \
-    --hash=sha256:f789a6f272b5b3d8f8756495019785e33868e5e00dd9662a3ee7959ac939bb12
+botocore==1.36.2 \
+    --hash=sha256:a1fe6610983f0214b0c7655fe6990b6a731746baf305b182976fc7b568fc3cb0 \
+    --hash=sha256:bc3b7e3b573a48af2bd7116b80fe24f9a335b0b67314dcb2697a327d009abf29
     # via
     #   boto3
     #   s3transfer
@@ -638,9 +638,9 @@ mdurl==0.1.2 \
     --hash=sha256:84008a41e51615a49fc9966191ff91509e3c40b939176e643fd50a5c2196b8f8 \
     --hash=sha256:bb413d29f5eea38f31dd4754dd7377d4465116fb207585f97bf925588687c1ba
     # via markdown-it-py
-minio==7.2.14 \
-    --hash=sha256:868dfe907e1702ce4bec86df1f3ced577a73ca85f344ef898d94fe2b5237f8c1 \
-    --hash=sha256:f5c24bf236fefd2edc567cd4455dc49a11ad8ff7ac984bb031b849d82f01222a
+minio==7.2.15 \
+    --hash=sha256:5247df5d4dca7bfa4c9b20093acd5ad43e82d8710ceb059d79c6eea970f49f79 \
+    --hash=sha256:c06ef7a43e5d67107067f77b6c07ebdd68733e5aa7eed03076472410ca19d876
     # via -r /app/requirements.in
 oauthlib==3.2.2 \
     --hash=sha256:8139f29aac13e25d502680e9e19963e83f16838d48a0d71c287fe40e7067fbca \
@@ -829,9 +829,9 @@ playwright==1.49.1 \
     --hash=sha256:9f38ed3d0c1f4e0a6d1c92e73dd9a61f8855133249d6f0cec28648d38a7137be \
     --hash=sha256:cd9bc8dab37aa25198a01f555f0a2e2c3813fe200fef018ac34dfe86b34994b9
     # via -r /app/requirements.in
-prefect==3.1.12 \
-    --hash=sha256:99a3b0078046c69e72a4285920136489c74b93d0f99b4e5dcf948fc3301cc88d \
-    --hash=sha256:c61ab39ea9d195395d5ec5e9c9e4d199837dc30ae9315b9e390ffd451f49bbe2
+prefect==3.1.13 \
+    --hash=sha256:06b7cf6e6a0f2c8a0db03c45af080bbd44db63400a9722f6212696c8963d54fe \
+    --hash=sha256:3b5651d230dcd89cd1b45005394197f7d9f055b0707af1a6235466e44a1be1a9
     # via -r /app/requirements.in
 prometheus-client==0.21.1 \
     --hash=sha256:252505a722ac04b0456be05c05f75f45d760c2911ffc45f2a06bcaed9f3ae3fb \
