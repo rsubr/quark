@@ -122,7 +122,7 @@ blinker==1.9.0 \
 boto3==1.36.6 \
     --hash=sha256:6d473f0f340d02b4e9ad5b8e68786a09728101a8b950231b89ebdaf72b6dca21 \
     --hash=sha256:b36feae061dc0793cf311468956a0a9e99215ce38bc99a1a4e55a5b105f16297
-    # via -r /app/requirements.in
+    # via -r requirements.in
 botocore==1.36.6 \
     --hash=sha256:4864c53d638da191a34daf3ede3ff1371a3719d952cc0c6bd24ce2836a38dd77 \
     --hash=sha256:f77bbbb03fb420e260174650fb5c0cc142ec20a96967734eed2b0ef24334ef34
@@ -384,7 +384,7 @@ fastapi==0.115.6 \
 flask==3.1.0 \
     --hash=sha256:5f873c5184c897c8d9d1b05df1e3d01b14910ce69607a117bd3277098a5836ac \
     --hash=sha256:d667207822eb83f1c4b50949b1623c8fc8d51f2341d65f72e1a1815397551136
-    # via -r /app/requirements.in
+    # via -r requirements.in
 fsspec==2024.12.0 \
     --hash=sha256:670700c977ed2fb51e0d9f9253177ed20cbde4a3e5c0283cc5385b5870c8533f \
     --hash=sha256:b520aed47ad9804237ff878b504267a3b0b441e97508bd6d2d8774e3db85cee2
@@ -641,7 +641,7 @@ mdurl==0.1.2 \
 minio==7.2.15 \
     --hash=sha256:5247df5d4dca7bfa4c9b20093acd5ad43e82d8710ceb059d79c6eea970f49f79 \
     --hash=sha256:c06ef7a43e5d67107067f77b6c07ebdd68733e5aa7eed03076472410ca19d876
-    # via -r /app/requirements.in
+    # via -r requirements.in
 oauthlib==3.2.2 \
     --hash=sha256:8139f29aac13e25d502680e9e19963e83f16838d48a0d71c287fe40e7067fbca \
     --hash=sha256:9859c40929662bec5d64f34d01c99e093149682a3f38915dc0655d5a633dd918
@@ -828,11 +828,11 @@ playwright==1.49.1 \
     --hash=sha256:753ca90ee31b4b03d165cfd36e477309ebf2b4381953f2a982ff612d85b147d2 \
     --hash=sha256:9f38ed3d0c1f4e0a6d1c92e73dd9a61f8855133249d6f0cec28648d38a7137be \
     --hash=sha256:cd9bc8dab37aa25198a01f555f0a2e2c3813fe200fef018ac34dfe86b34994b9
-    # via -r /app/requirements.in
-prefect==3.1.14 \
-    --hash=sha256:2c9e2b29fc0bccb1a6addb883292d055fec9e14a51ed74b223bfb34958e96fe5 \
-    --hash=sha256:8de9b4d32ae045e46568822f6d8d234735f07f2ad8ffa899d502ee73be7396f6
-    # via -r /app/requirements.in
+    # via -r requirements.in
+prefect==3.1.15 \
+    --hash=sha256:29d25d535d04e54db9a27db198ef5d31baf1cbcd73e3c7d1ae48135bb419dd39 \
+    --hash=sha256:6dd8d018acdd8e10294e4c2e26a2c6adf636984ff5e77f0681030e94d0a15922
+    # via -r requirements.in
 prometheus-client==0.21.1 \
     --hash=sha256:252505a722ac04b0456be05c05f75f45d760c2911ffc45f2a06bcaed9f3ae3fb \
     --hash=sha256:594b45c410d6f4f8888940fe80b5cc2521b305a1fafe1c58609ef715a001f301
@@ -848,7 +848,7 @@ psycopg2==2.9.10 \
     --hash=sha256:91fd603a2155da8d0cfcdbf8ab24a2d54bca72795b90d2a3ed2b6da8d979dee2 \
     --hash=sha256:9d5b3b94b79a844a986d029eee38998232451119ad653aea42bb9220a8c5066b \
     --hash=sha256:c6f7b8561225f9e711a9c47087388a97fdc948211c10a4bccbf0ba68ab7b3b5a
-    # via -r /app/requirements.in
+    # via -r requirements.in
 pycparser==2.22 \
     --hash=sha256:491c8be9c040f5390f5bf44a5b07752bd07f56edf992381b05c701439eec10f6 \
     --hash=sha256:c3702b6d3dd8c7abc1afa565d7e63d53a1d0bd86cdc24edd75470f4de499cfcc
@@ -1211,7 +1211,7 @@ requests==2.32.3 \
     --hash=sha256:55365417734eb18255590a9ff9eb97e9e1da868d4ccd6402399eaf68af20a760 \
     --hash=sha256:70761cfe03c773ceb22aa2f671b4757976145175cdfca038c02654d061d6dcc6
     # via
-    #   -r /app/requirements.in
+    #   -r requirements.in
     #   apprise
     #   docker
     #   requests-oauthlib
