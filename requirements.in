@@ -1,6 +1,6 @@
-playwright==1.49.1
-prefect==3.1.14
-boto3==1.36.6
+playwright==1.50.0
+prefect==3.2.2
+boto3==1.36.21
 minio==7.2.15
 Flask==3.1.0
 psycopg2==2.9.10
