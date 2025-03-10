@@ -9,8 +9,6 @@ if [ -z "$ver" ]; then
   exit 1
 fi
 
-set -eoux pipefail
-
 echo "Replace local tag ${ver} to reference latest commit"
 git tag -fa "${ver}" -m "Release ${ver}"
 
