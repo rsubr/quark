@@ -22,7 +22,7 @@ if [ ! -f /.dockerenv ]; then
     python:3.12-bookworm /app/build-portable.sh
 
   # Create a tarball with portable quark
-  tar czvf ./build/quark.tar.gz -C ./build opt/quark
+  tar czf ./build/quark.tar.gz -C ./build opt/quark
 
   exit 0
 fi
