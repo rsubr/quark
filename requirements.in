@@ -1,6 +1,8 @@
 playwright==1.51.0
 prefect==3.3.0
-boto3==1.37.24
+# pinning boto3 to < 1.36.0 due to 
+# https://stackoverflow.com/questions/79375793/s3uploadfailederror-due-to-missingcontentlength-when-calling-putobject-in-mlflow
+boto3==1.35.99
 minio==7.2.15
 Flask==3.1.0
 psycopg2==2.9.10
