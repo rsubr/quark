@@ -6,7 +6,7 @@
 BASEDIR=/opt/quark
 ARCH=$(arch)
 PYTHON_VERSION=3.12
-QUARK_VERSION=25.04
+QUARK_VERSION=`git describe --exact-match --tags`
 
 if [ ! -f /.dockerenv ]; then
   if ! command -v docker &> /dev/null; then
