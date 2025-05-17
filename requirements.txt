@@ -119,13 +119,13 @@ blinker==1.9.0 \
     --hash=sha256:b4ce2265a7abece45e7cc896e98dbebe6cead56bcf805a3d23136d145f5445bf \
     --hash=sha256:ba0efaa9080b619ff2f3459d1d500c57bddea4a6b424b60a91141db6fd2f08bc
     # via flask
-boto3==1.35.99 \
-    --hash=sha256:83e560faaec38a956dfb3d62e05e1703ee50432b45b788c09e25107c5058bd71 \
-    --hash=sha256:e0abd794a7a591d90558e92e29a9f8837d25ece8e3c120e530526fe27eba5fca
+boto3==1.38.18 \
+    --hash=sha256:38ecb477ba9fc4edcf97133bf1fe33261ebec6c58d59982abff3cea167624211 \
+    --hash=sha256:bd723bfbc109bdc63e017ead74dd22f2cf8a7515e24e730870b8a70af823e626
     # via -r /app/requirements.in
-botocore==1.35.99 \
-    --hash=sha256:1eab44e969c39c5f3d9a3104a0836c24715579a455f12b3979a31d7cde51b3c3 \
-    --hash=sha256:b22d27b6b617fc2d7342090d6129000af2efd20174215948c0d7ae2da0fab445
+botocore==1.38.18 \
+    --hash=sha256:0b5ddf195f15218f30ec63d8aba9e55cf60af2984c068276b9fd206059043310 \
+    --hash=sha256:ae4c97383e797e9648f8721bb0217fd9efd228e9fbc661d83dc0959be083ec5c
     # via
     #   boto3
     #   s3transfer
@@ -942,18 +942,19 @@ pendulum==3.0.0 \
     --hash=sha256:fd69b15374bef7e4b4440612915315cc42e8575fcda2a3d7586a0d88192d0c88 \
     --hash=sha256:fde4d0b2024b9785f66b7f30ed59281bd60d63d9213cda0eb0910ead777f6d37
     # via prefect
-playwright==1.51.0 \
-    --hash=sha256:2e0ae6eb44297b24738e1a6d9c580ca4243b4e21b7e65cf936a71492c08dd0d4 \
-    --hash=sha256:4cef804991867ea27f608b70fa288ee52a57651e22d02ab287f98f8620b9408c \
-    --hash=sha256:814e4ec2a1a0d6f6221f075622c06b31ceb2bdc6d622258cfefed900c01569ae \
-    --hash=sha256:9ece9316c5d383aed1a207f079fc2d552fff92184f0ecf37cc596e912d00a8c3 \
-    --hash=sha256:ab4c0ff00bded52c946be60734868febc964c8a08a9b448d7c20cb3811c6521c \
-    --hash=sha256:bcaaa3d5d73bda659bfb9ff2a288b51e85a91bd89eda86eaf8186550973e416a \
-    --hash=sha256:d5c9f67bc6ef49094618991c78a1466c5bac5ed09157660d78b8510b77f92746
+playwright==1.52.0 \
+    --hash=sha256:0797c0479cbdc99607412a3c486a3a2ec9ddc77ac461259fd2878c975bcbb94a \
+    --hash=sha256:19b2cb9d4794062008a635a99bd135b03ebb782d460f96534a91cb583f549512 \
+    --hash=sha256:4173e453c43180acc60fd77ffe1ebee8d0efbfd9986c03267007b9c3845415af \
+    --hash=sha256:7223960b7dd7ddeec1ba378c302d1d09733b8dac438f492e9854c85d3ca7144f \
+    --hash=sha256:9d0085b8de513de5fb50669f8e6677f0252ef95a9a1d2d23ccee9638e71e65cb \
+    --hash=sha256:cd0bdf92df99db6237a99f828e80a6a50db6180ef8d5352fc9495df2c92f9971 \
+    --hash=sha256:d010124d24a321e0489a8c0d38a3971a7ca7656becea7656c9376bfea7f916d4 \
+    --hash=sha256:dcbf75101eba3066b7521c6519de58721ea44379eb17a0dafa94f9f1b17f59e4
     # via -r /app/requirements.in
-prefect==3.3.0 \
-    --hash=sha256:24d8a796601dc0c10d24caad8618f591aa5bc45191849d705f151dd9768ea29a \
-    --hash=sha256:bc819236a45dae509fac0dd2e8eb1cedc1d796f60af09d0b94409794a0e3b7a8
+prefect==3.3.1 \
+    --hash=sha256:0c46e9e1acd16afca784bac0a029059f72baba66a0a51fb88e09528539fc46cf \
+    --hash=sha256:429e92c74332ec2d236640cebea728112d1f5bc1c3197f6f6d6098f897680aa5
     # via -r /app/requirements.in
 prometheus-client==0.21.1 \
     --hash=sha256:252505a722ac04b0456be05c05f75f45d760c2911ffc45f2a06bcaed9f3ae3fb \
@@ -1129,9 +1130,9 @@ pydantic-settings==2.7.1 \
     --hash=sha256:10c9caad35e64bfb3c2fbf70a078c0e25cc92499782e5200747f942a065dec93 \
     --hash=sha256:590be9e6e24d06db33a4262829edef682500ef008565a969c73d39d5f8bfb3fd
     # via prefect
-pyee==12.0.0 \
-    --hash=sha256:7b14b74320600049ccc7d0e0b1becd3b4bd0a03c745758225e31a59f4095c990 \
-    --hash=sha256:c480603f4aa2927d4766eb41fa82793fe60a82cbfdb8d688e0d08c55a534e145
+pyee==13.0.0 \
+    --hash=sha256:48195a3cddb3b1515ce0695ed76036b5ccc2ef3a9f963ff9f77aec0139845498 \
+    --hash=sha256:b391e3c5a434d1f5118a25615001dbc8f669cf410ab67d04c4d4e07c55481c37
     # via playwright
 pygments==2.19.1 \
     --hash=sha256:61c16d2a8576dc0649d9f39e089b5f02bcd27fba10d8fb4dcc28173f7a45151f \
@@ -1510,9 +1511,9 @@ ruamel-yaml-clib==0.2.12 \
     --hash=sha256:fc4b630cd3fa2cf7fce38afa91d7cfe844a9f75d7f0f36393fa98815e911d987 \
     --hash=sha256:fd5415dded15c3822597455bc02bcd66e81ef8b7a48cb71a33628fc9fdde39df
     # via ruamel-yaml
-s3transfer==0.10.4 \
-    --hash=sha256:244a76a24355363a68164241438de1b72f8781664920260c48465896b712a41e \
-    --hash=sha256:29edc09801743c21eb5ecbc617a152df41d3c287f67b615f73e5f750583666a7
+s3transfer==0.12.0 \
+    --hash=sha256:35b314d7d82865756edab59f7baebc6b477189e6ab4c53050e28c1de4d9cce18 \
+    --hash=sha256:8ac58bc1989a3fdb7c7f3ee0918a66b160d038a147c7b5db1500930a607e9a1c
     # via boto3
 scipy==1.15.2 \
     --hash=sha256:01edfac9f0798ad6b46d9c4c9ca0e0ad23dbf0b1eb70e96adb9fa7f525eff0bf \
