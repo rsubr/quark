@@ -1,5 +1,5 @@
 playwright==1.52.0
-prefect==3.3.1
+prefect==3.4.1
 boto3==1.38.18
 minio==7.2.15
 Flask==3.1.1
@@ -7,7 +7,7 @@ psycopg2==2.9.10
 requests==2.32.3
 opencv-python==4.11.0.86
 numpy==2.2.5
-scipy==1.15.2
+scipy==1.15.3
 pandas==2.2.3
 openpyxl==3.1.5
 loguru==0.7.3
