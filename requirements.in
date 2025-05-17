@@ -2,7 +2,7 @@ playwright==1.52.0
 prefect==3.3.1
 boto3==1.38.18
 minio==7.2.15
-Flask==3.1.0
+Flask==3.1.1
 psycopg2==2.9.10
 requests==2.32.3
 opencv-python==4.11.0.86
