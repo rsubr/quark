@@ -17,9 +17,6 @@ if [ ! -f /.dockerenv ]; then
   # Runs on docker host
   set -eoux pipefail
 
-  # may need to sudo this to clean up the build directory
-  rm -rf ./build/opt
-
   docker run -ti --rm \
     -v ${PWD}/build/opt:/opt -v ${PWD}:/app \
     python:3.12-bookworm /app/build-portable.sh
@@ -35,6 +32,7 @@ set -eoux pipefail
 
 wget -q -O /tmp/Miniconda3-latest-Linux.sh https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-${ARCH}.sh
 
+# clean up previous builds
 rm -rf /opt/{miniconda,quark}
 
 # Install miniconda in /opt/minicoda
