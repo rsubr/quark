@@ -35,6 +35,8 @@ set -eoux pipefail
 
 wget -q -O /tmp/Miniconda3-latest-Linux.sh https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-${ARCH}.sh
 
+rm -rf /opt/{miniconda,quark}
+
 # Install miniconda in /opt/minicoda
 bash /tmp/Miniconda3-latest-Linux.sh -b -p /opt/miniconda
 
