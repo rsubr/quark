@@ -1,5 +1,5 @@
 playwright==1.54.0
-prefect==3.4.10
+prefect==3.4.11
 boto3==1.39.17
 minio==7.2.16
 Flask==3.1.1
