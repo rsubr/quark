@@ -6,7 +6,6 @@
 BASEDIR=/opt/quark
 ARCH=$(arch)
 PYTHON_VERSION=3.12
-QUARK_VERSION=`git describe --exact-match --tags`
 
 if [ ! -f /.dockerenv ]; then
   if ! command -v docker &> /dev/null; then
@@ -21,6 +20,7 @@ if [ ! -f /.dockerenv ]; then
     -v ${PWD}/build/opt:/opt -v ${PWD}:/app \
     python:3.12-bookworm /app/build-portable.sh
 
+  QUARK_VERSION=`cat ${PWD}/build/opt/quark/.version`
   # Create a tarball with portable quark
   tar czf ./build/quark-linux-${ARCH}-${QUARK_VERSION}.tar.gz -C ./build opt/quark
 
@@ -29,6 +29,11 @@ fi
 
 # Runs inside docker
 set -eoux pipefail
+
+cd /app
+
+git config --global --add safe.directory /app
+QUARK_VERSION=`git describe --exact-match --tags`
 
 wget -q -O /tmp/Miniconda3-latest-Linux.sh https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-${ARCH}.sh
 
@@ -41,6 +46,9 @@ bash /tmp/Miniconda3-latest-Linux.sh -b -p /opt/miniconda
 # Add conda environment details to bash
 /opt/miniconda/bin/conda init bash && . ~/.bashrc
 
+
+conda tos accept --override-channels --channel https://repo.anaconda.com/pkgs/main
+conda tos accept --override-channels --channel https://repo.anaconda.com/pkgs/r
 conda create --prefix $BASEDIR python=$PYTHON_VERSION --yes
 conda activate $BASEDIR
 
