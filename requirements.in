@@ -2,7 +2,7 @@ playwright==1.54.0
 prefect==3.4.13
 boto3==1.40.11
 minio==7.2.16
-Flask==3.1.1
+Flask==3.1.2
 psycopg2==2.9.10
 requests==2.32.4
 # Pinning opencv due to compatibility issues with other libraries
