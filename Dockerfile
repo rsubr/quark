@@ -1,4 +1,4 @@
-FROM python:3.12-slim-bookworm
+FROM python:3.12-bookworm
 LABEL Author="Raja Subramanian" Description="A comprehensive docker image to run python automation workers."
 
 WORKDIR /app

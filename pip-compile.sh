@@ -11,7 +11,7 @@ if [ ! -f /.dockerenv ]; then
     echo "Unable to find docker, exiting."
     exit 1
   fi
-  docker run -ti --rm -v ${PWD}:${BASEDIR} python:3.12-slim-bookworm ${BASEDIR}/pip-compile.sh
+  docker run -ti --rm -v ${PWD}:${BASEDIR} python:3.12-bookworm ${BASEDIR}/pip-compile.sh
   exit 0
 fi
 
