@@ -18,7 +18,7 @@ if [ ! -f /.dockerenv ]; then
 
   docker run -ti --rm \
     -v ${PWD}/build/opt:/opt -v ${PWD}:/app \
-    python:3.12-slim-trixie /app/build-portable.sh
+    python:3.12-bookworm /app/build-portable.sh
 
   QUARK_VERSION=`cat ${PWD}/build/opt/quark/.version`
   # Create a tarball with portable quark
