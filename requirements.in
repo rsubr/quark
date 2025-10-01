@@ -1,5 +1,5 @@
 playwright==1.52.0      # Pin playwright version, do not upgrade
-prefect==3.4.17
+prefect==3.4.20
 boto3==1.40.28
 minio==7.2.16
 Flask==3.1.2
