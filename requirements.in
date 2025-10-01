@@ -1,7 +1,7 @@
 playwright==1.52.0      # Pin playwright version, do not upgrade
 prefect==3.4.17
 boto3==1.40.28
-minio==7.2.16
+minio==7.2.18
 Flask==3.1.2
 psycopg2-binary==2.9.10
 requests==2.32.5
