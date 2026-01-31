@@ -13,6 +13,6 @@ pdfplumber
 google-genai
 mt-940
 pillow
-opencv-python
-pywa
+opencv-python-headless
 pytesseract
+pywa

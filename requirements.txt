@@ -790,22 +790,22 @@ numpy==2.4.1 \
     --hash=sha256:fb1461c99de4d040666ca0444057b06541e5642f800b71c56e6ea92d6a853a0c
     # via
     #   -r /app/requirements.in
-    #   opencv-python
+    #   opencv-python-headless
     #   pandas
     #   scipy
 oauthlib==3.3.1 \
     --hash=sha256:0f0f8aa759826a193cf66c12ea1af1637f87b9b4622d46e866952bb022e538c9 \
     --hash=sha256:88119c938d2b8fb88561af5f6ee0eec8cc8d552b7bb1f712743136eb7523b7a1
     # via requests-oauthlib
-opencv-python==4.13.0.90 \
-    --hash=sha256:1150b8f1947761b848bbfa9c96ceba8877743ffef157c08a04af6f7717ddd709 \
-    --hash=sha256:458a00f2ba47a877eca385be3e7bcc45e6d30a4361d107ce73c1800f516dab09 \
-    --hash=sha256:526bde4c33a86808a751e2bb57bf4921beb49794621810971926c472897f6433 \
-    --hash=sha256:58803f8b05b51d8a785e2306d83b44173b32536f980342f3bc76d8c122b5938d \
-    --hash=sha256:9911581e37b24169e4842069ff01d6645ea2bc4af7e10a022d9ebe340fd035ec \
-    --hash=sha256:a5354e8b161409fce7710ba4c1cfe88b7bb460d97f705dc4e714a1636616f87d \
-    --hash=sha256:d557cbf0c7818081c9acf56585b68e781af4f00638971f75eaa3de70904a6314 \
-    --hash=sha256:d6716f16149b04eea52f953b8ca983d60dd9cd4872c1fd5113f6e2fcebb90e93
+opencv-python-headless==4.13.0.90 \
+    --hash=sha256:0e0c8c9f620802fddc4fa7f471a1d263c7b0dca16cd9e7e2f996bb8bd2128c0c \
+    --hash=sha256:12a28674f215542c9bf93338de1b5bffd76996d32da9acb9e739fdb9c8bbd738 \
+    --hash=sha256:32255203040dc98803be96362e13f9e4bce20146898222d2e5c242f80de50da5 \
+    --hash=sha256:96060fc57a1abb1144b0b8129e2ff3bfcdd0ccd8e8bd05bd85256ff4ed587d3b \
+    --hash=sha256:dbc1f4625e5af3a80ebdbd84380227c0f445228588f2521b11af47710caca1ba \
+    --hash=sha256:e13790342591557050157713af17a7435ac1b50c65282715093c9297fa045d8f \
+    --hash=sha256:eba38bc255d0b7d1969c5bcc90a060ca2b61a3403b613872c750bfa5dfe9e03b \
+    --hash=sha256:f46b17ea0aa7e4124ca6ad71143f89233ae9557f61d2326bcdb34329a1ddf9bd
     # via -r /app/requirements.in
 openpyxl==3.1.5 \
     --hash=sha256:5282c12b107bffeef825f4617dc029afaf41d0ea60823bbb665ef3079dc79de2 \
