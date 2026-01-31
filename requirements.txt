@@ -475,6 +475,7 @@ httpx[http2]==0.28.1 \
     # via
     #   google-genai
     #   prefect
+    #   pywa
 humanize==4.13.0 \
     --hash=sha256:78f79e68f76f0b04d711c4e55d32bebef5be387148862cb1ef83d2b58e7935a0 \
     --hash=sha256:b810820b31891813b1673e8fec7f1ed3312061eab2f26e3fa192c393d11ed25f
@@ -929,6 +930,7 @@ packaging==25.0 \
     # via
     #   opentelemetry-instrumentation
     #   prefect
+    #   pytesseract
 pandas==2.3.3 \
     --hash=sha256:0242fe9a49aa8b4d78a4fa03acb397a58833ef6199e9aa40a95f027bb3a1b6e7 \
     --hash=sha256:1611aedd912e1ff81ff41c745822980c49ce4a7907537be8692c8dbc31924593 \
@@ -1159,6 +1161,7 @@ pillow==12.1.0 \
     # via
     #   -r /app/requirements.in
     #   pdfplumber
+    #   pytesseract
 playwright==1.57.0 \
     --hash=sha256:1dd93b265688da46e91ecb0606d36f777f8eadcf7fbef12f6426b20bf0c9137c \
     --hash=sha256:284ed5a706b7c389a06caa431b2f0ba9ac4130113c3a779767dda758c2497bb1 \
@@ -1422,6 +1425,10 @@ pypdfium2==4.30.0 \
     --hash=sha256:f1f78d2189e0ddf9ac2b7a9b9bd4f0c66f54d1389ff6c17e9fd9dc034d06eb3f \
     --hash=sha256:f33bd79e7a09d5f7acca3b0b69ff6c8a488869a7fab48fdf400fec6e20b9c8be
     # via pdfplumber
+pytesseract==0.3.13 \
+    --hash=sha256:4bf5f880c99406f52a3cfc2633e42d9dc67615e69d8a509d74867d3baddb5db9 \
+    --hash=sha256:7a99c6c2ac598360693d83a416e36e0b33a67638bb9d77fdcac094a3589d4b34
+    # via -r /app/requirements.in
 python-dateutil==2.9.0.post0 \
     --hash=sha256:37dd54208da7e1cd875388217d5e00ebd4179249f90fb72437e91a35459a0ad3 \
     --hash=sha256:a8b2bc7bffae282281c8140a97d3aa9c14da0b136dfe83f850eea9a5f7470427
@@ -1450,6 +1457,10 @@ pytz==2025.2 \
     #   dateparser
     #   pandas
     #   prefect
+pywa==3.8.0 \
+    --hash=sha256:072d9455b197b25e529c47c30fb456d8f4ab71bd8f05c5ee1429c91a5c374314 \
+    --hash=sha256:144cb9550a059de62a0aa2f3438623e845f7b46741e39f1458f955dcc6868bd6
+    # via -r /app/requirements.in
 pyyaml==6.0.2 \
     --hash=sha256:01179a4a8559ab5de078078f37e5c1a30d76bb88519906844fd7bdea1b7729ff \
     --hash=sha256:0833f8694549e586547b576dcfaba4a6b55b9e96098b36cdc7ebefe667dfed48 \
