@@ -1,34 +1,98 @@
-name: multi-arch docker build using qemu
+name: multi-arch docker build native, SLSA
 
 on:
   push:
     tags: '*'
   workflow_dispatch:
 
+permissions:
+  contents: read
+  packages: write
+  id-token: write   # REQUIRED for provenance signing
+
 jobs:
   build:
-    runs-on: ubuntu-24.04
-    
+    strategy:
+      matrix:
+        include:
+          - arch: amd64
+            runner: ubuntu-24.04
+          - arch: arm64
+            runner: ubuntu-24.04-arm
+
+    runs-on: ${{ matrix.runner }}
+
     steps:
-      - name: checkout code
-        uses: actions/checkout@v4
-        
-      - name: set up qemu for linux/arm64
-        uses: docker/setup-qemu-action@v3
+      - uses: actions/checkout@v4
 
-      - name: install buildx
-        id: buildx
-        uses: docker/setup-buildx-action@v3
-        with:
-          version: latest
+      - uses: docker/setup-buildx-action@v3
 
-      - name: login to docker hub
-        run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
+      - name: Login to Docker Hub
+        run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login \
+              -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
 
-      - name: build multi-arch image and push to docker hub
+      - name: Build & push arch image (with SBOM + provenance)
+        id: build
         env:
           DOCKER_TAG_NAME: ${{ github.ref_name }}
         run: |
-          docker buildx build --push \
-            --tag rsubr/quark:$DOCKER_TAG_NAME \
-            --platform linux/amd64,linux/arm64 .
+          docker buildx build \
+            --push \
+            --platform linux/${{ matrix.arch }} \
+            --tag rsubr/quark:${DOCKER_TAG_NAME}-${{ matrix.arch }} \
+            --attest type=provenance,mode=max \
+            --attest type=sbom \
+            --metadata-file metadata.json \
+            .
+
+          echo "digest=$(jq -r '.containerimage.digest' metadata.json)" >> $GITHUB_OUTPUT
+
+      - name: Save digest
+        run: echo "${{ matrix.arch }}=${{ steps.build.outputs.digest }}" >> digests.txt
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: digests-${{ matrix.arch }}
+          path: digests.txt
+
+  manifest:
+    needs: build
+    runs-on: ubuntu-24.04
+
+    steps:
+      - uses: docker/setup-buildx-action@v3
+
+      - name: Login to Docker Hub
+        run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login \
+              -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
+
+      - uses: actions/download-artifact@v4
+        with:
+          path: digests
+
+      - name: Combine digests
+        run: cat digests/* > all_digests.txt
+
+      - name: Create multi-arch manifest
+        env:
+          DOCKER_TAG_NAME: ${{ github.ref_name }}
+        run: |
+          AMD=$(grep amd64 all_digests.txt | cut -d= -f2)
+          ARM=$(grep arm64 all_digests.txt | cut -d= -f2)
+
+          docker buildx imagetools create \
+            --tag rsubr/quark:${DOCKER_TAG_NAME} \
+            rsubr/quark@${AMD} \
+            rsubr/quark@${ARM}
+
+      - name: Remove temporary tags
+        env:
+          DOCKER_TAG_NAME: ${{ github.ref_name }}
+        run: |
+          curl -s -X DELETE \
+            -u "${{ secrets.DOCKER_USERNAME }}:${{ secrets.DOCKER_PASSWORD }}" \
+            "https://hub.docker.com/v2/repositories/rsubr/quark/tags/${DOCKER_TAG_NAME}-amd64/" || true
+
+          curl -s -X DELETE \
+            -u "${{ secrets.DOCKER_USERNAME }}:${{ secrets.DOCKER_PASSWORD }}" \
+            "https://hub.docker.com/v2/repositories/rsubr/quark/tags/${DOCKER_TAG_NAME}-arm64/" || true
