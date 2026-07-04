@@ -58,6 +58,11 @@ pip install -r /app/requirements.txt
 export PLAYWRIGHT_BROWSERS_PATH=$BASEDIR/pw-browsers
 playwright install --only-shell --with-deps chromium
 
+# Fetch Camoufox into the portable tree (instead of the default ~/.cache)
+# so it ships inside the tarball and works offline on the target machine.
+export XDG_CACHE_HOME=$BASEDIR/camoufox-cache
+python -m camoufox fetch
+
 # Save build details in $BASEDIR
 cp /app/requirements.txt $BASEDIR/requirements.txt
 echo $QUARK_VERSION > $BASEDIR/.version
@@ -70,6 +75,7 @@ cat <<EOT > $BASEDIR/env.sh
 BASEDIR=/opt/quark
 
 export PW_BROWSERS_PATH=$BASEDIR/pw-browsers
+export XDG_CACHE_HOME=$BASEDIR/camoufox-cache
 export PATH=$BASEDIR/bin:$PATH
 
 EOT

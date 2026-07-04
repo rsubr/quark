@@ -1,4 +1,5 @@
-playwright
+playwright==1.51.0
+camoufox
 prefect
 boto3
 Flask
