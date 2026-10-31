@@ -1,4 +1,4 @@
-FROM python:3.15-slim-trixie
+FROM python:3.14-slim-trixie
 LABEL Author="Raja Subramanian" Description="A comprehensive docker image to run python automation workers."
 
 ENV DEBIAN_FRONTEND=noninteractive
@@ -21,13 +21,13 @@ RUN apt-get update && \
 
 COPY requirements.txt /app
 
-# debian slim does not have curl, use a substitute
-COPY --chmod=755 --chown=root:root curl.py /usr/local/bin/curl.py 
-
 RUN pip install --no-cache-dir -r requirements.txt && \
     playwright install --only-shell --with-deps chromium && \
     python -m camoufox fetch && \
     apt-get clean && rm -rf /var/lib/apt/lists/*
+
+# debian slim does not have curl, use a substitute
+COPY --chmod=755 --chown=root:root curl.py /usr/local/bin/curl.py 
 
 COPY --chmod=755 docker-entrypoint.sh /app/docker-entrypoint.sh
 
