@@ -19,15 +19,15 @@ RUN apt-get update && \
         wget gnupg ca-certificates xdg-utils fonts-liberation && \
     apt-get clean && rm -rf /var/lib/apt/lists/*
 
+# debian slim does not have curl, use a substitute
+COPY --chmod=755 --chown=root:root curl.py /usr/local/bin/curl.py 
+
 COPY requirements.txt /app
 
 RUN pip install --no-cache-dir -r requirements.txt && \
     playwright install --only-shell --with-deps chromium && \
     python -m camoufox fetch && \
     apt-get clean && rm -rf /var/lib/apt/lists/*
-
-# debian slim does not have curl, use a substitute
-COPY --chmod=755 --chown=root:root curl.py /usr/local/bin/curl.py 
 
 COPY --chmod=755 docker-entrypoint.sh /app/docker-entrypoint.sh
 
