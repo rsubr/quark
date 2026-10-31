@@ -13,7 +13,7 @@ if [ ! -f /.dockerenv ]; then
   fi
   TTY_FLAGS='-i'
   [ -t 0 ] && TTY_FLAGS='-ti'
-  docker run ${TTY_FLAGS} --rm -v ${PWD}:${BASEDIR} python:3.12-bookworm ${BASEDIR}/pip-compile.sh
+  docker run ${TTY_FLAGS} --rm -v ${PWD}:${BASEDIR} python:3.15-trixie ${BASEDIR}/pip-compile.sh
   exit 0
 fi
 
