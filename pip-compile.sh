@@ -11,7 +11,9 @@ if [ ! -f /.dockerenv ]; then
     echo "Unable to find docker, exiting."
     exit 1
   fi
-  docker run -ti --rm -v ${PWD}:${BASEDIR} python:3.12-bookworm ${BASEDIR}/pip-compile.sh
+  TTY_FLAGS='-i'
+  [ -t 0 ] && TTY_FLAGS='-ti'
+  docker run ${TTY_FLAGS} --rm -v ${PWD}:${BASEDIR} python:3.12-bookworm ${BASEDIR}/pip-compile.sh
   exit 0
 fi
 
@@ -19,5 +21,5 @@ set -eoux pipefail
 
 
 pip install pip-tools
-pip-compile --generate-hashes -v \
+pip-compile --upgrade --generate-hashes -v \
     -o ${BASEDIR}/requirements.txt ${BASEDIR}/requirements.in
